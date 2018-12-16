@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        
+    </h:head>
+    <h:body>
+        <h:form>
+            <h4>liste des etudiants insecrit  </h4>
+            <h:dataTable var="e" value="#{SelectClasse.l}" border="2" >
+                <h:column rowHeader="NumInscription">
+                    
+                    <h:outputText value="#{e.numInscript}"/>
+                </h:column>
+                <h:column rowHeader="Nom">
+                   
+                   <h:outputText value="#{e.nom}"/> 
+                </h:column>
+                <h:column rowHeader="Prenom">
+                    
+                    <h:outputText value="#{e.prenom}"/>
+                </h:column>
+                <h:column rowHeader="classe">
+                   
+                    <h:outputText value="#{e.classe}"/>
+                </h:column>
+                <h:column>
+                   
+                    <h:commandButton value="Modifier" action="#{EditEtudiants.GetEtudiant(e.numInscript)}" />
+                    <h:commandButton value="Supprimer" action="#{RemoveEtudiants.DeleteAction(e.numInscript)}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

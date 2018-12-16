@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>/listeEtudiantClasse.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>list_etudiant</from-outcome>
+            <to-view-id>/ListeEtudiant.xhtml</to-view-id> 
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+         <description>ListEtudiantBean</description>
+         <managed-bean-name>SelectClasse</managed-bean-name>
+         <managed-bean-class>Bean.SelectClasse</managed-bean-class>
+         <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+         <description>ListEtudiantBean</description>
+         <managed-bean-name>listEtudiants</managed-bean-name>
+         <managed-bean-class>Bean.ListEtudiant</managed-bean-class>
+         <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <navigation-rule>
+        <from-view-id>/ListeEtudiant.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>EditEtudiant</from-outcome>
+            <to-view-id>/EditEtudiant.xhtml</to-view-id> 
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+         <description>EditEtudiantBean</description>
+         <managed-bean-name>EditEtudiants</managed-bean-name>
+         <managed-bean-class>Bean.EditeEtudiant</managed-bean-class>
+         <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+        <from-view-id>/EditEtudiant.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/listeEtudiantClasse.xhtml</to-view-id> 
+        </navigation-case>
+    </navigation-rule>
+   
+  
+    
+    <managed-bean>
+         <description>RemoveEtudiantBean</description>
+         <managed-bean-name>RemoveEtudiants</managed-bean-name>
+         <managed-bean-class>Bean.RemoveEtudiant</managed-bean-class>
+         <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+   
+       <navigation-rule>
+        <from-view-id>/ListeEtudiant.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/listeEtudiantClasse.xhtml</to-view-id> 
+        </navigation-case>
+    </navigation-rule>
+    
+    <managed-bean>
+         <description>UploadFileBean</description>
+         <managed-bean-name>UploadFile</managed-bean-name>
+         <managed-bean-class>Bean.UploadFile</managed-bean-class>
+         <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+   
+       <navigation-rule>
+        <from-view-id>/UploadFile.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>upload</from-outcome>
+            <to-view-id>/listeEtudiantClasse.xhtml</to-view-id> 
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>
